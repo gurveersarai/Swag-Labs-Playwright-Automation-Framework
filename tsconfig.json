@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "outDir": "dist"
+  },
+  "include": ["auth/**/*.ts", "fixtures/**/*.ts", "tests/**/*.ts", "pageObjects/**/*.ts"]
+}

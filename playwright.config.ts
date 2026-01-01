@@ -24,7 +24,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.BASE_URL || "https://google.co.uk",
     headless: false,
-
+    storageState: './auth/auth.setup.json',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
   },

@@ -2,6 +2,8 @@ import { test } from "../fixtures/site";
 import { expect } from "@playwright/test";
 import testData from "../utils/testData.json";
 
+test.use({storageState: undefined});
+
 const data = JSON.parse(JSON.stringify(testData));
 test("user is able to navigate to the login page", async ({page, poManager}) => {
   await expect(page).toHaveTitle("Swag Labs");
