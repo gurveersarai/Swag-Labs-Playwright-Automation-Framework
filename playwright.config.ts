@@ -24,7 +24,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.BASE_URL || "https://google.co.uk",
     headless: false,
-    storageState: './auth/auth.setup.json',
+    //storageState: './auth/auth.setup.json',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
   },
@@ -32,18 +32,32 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup',
+      testMatch: /.*\.setup\.ts$/,  // ✅ Matches .setup.ts files
+    },
+
+    {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: { ...devices["Desktop Chrome"],
+        storageState: 'playwright/.auth/standard-user.json',
+       },
+       dependencies: ['setup'],
     },
 
     {
       name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
+      use: { ...devices["Desktop Firefox"],
+        storageState: 'playwright/.auth/standard-user.json',
+       },
+       dependencies: ['setup']
     },
 
     {
       name: "webkit",
-      use: { ...devices["Desktop Safari"] },
+      use: { ...devices["Desktop Safari"],
+        storageState: 'playwright/.auth/standard-user.json',
+       },
+       dependencies: ['setup']
     },
 
     /* Test against mobile viewports. */

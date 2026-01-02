@@ -8,14 +8,19 @@ type MyFixtures = {
 
 export const test = base.extend<MyFixtures>({
   poManager: async ({ page }, use) => {
-    await page.goto("/");
+     const storageStatePath = test.info().project.use?.storageState;
+    
+    if (storageStatePath) {
+      // Authenticated tests - go straight to dashboard
+      await page.goto("/inventory.html"); // or wherever your dashboard is
+    } else {
+      // Login tests - go to login page
+      await page.goto("/");
+    }
     const poManager = new POManager(page);
     await use(poManager);
     console.log("Fixture completed");
+   
   },
 
-  // authenticatedPage: async ({ page, poManager }, use) => {
-  //   await page.goto("/");
-  //   await poManager.loginPage.signIn(testData[0].username, testData[0].password);
-  //   await use(page);
 });
