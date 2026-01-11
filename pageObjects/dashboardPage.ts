@@ -53,5 +53,21 @@ export default class DashboardPage {
         }
         return count 
     }
+
+    async removeFirstProductFromCart() {
+        const firstProductRemoveButton = this.productContainers.nth(0).locator('.btn_inventory');
+        await firstProductRemoveButton.click();
+    }
+
+    async clickOnProductByIndex(index: number) {
+        const productLink = this.productContainers.nth(index);
+        const productNameLink = await productLink.locator('.inventory_item_name');
+        await productNameLink.click();
+    }
+
+    async clickOnProductImageByIndex(index: number) {
+        const productImage = this.productImg.nth(index);
+        await productImage.click();
+    }
 }
 
