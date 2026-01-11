@@ -1,7 +1,5 @@
-import {test} from "../fixtures/site";
+import {test} from "../../fixtures/site";
 import {expect} from "@playwright/test";
-
-test.use({storageState: 'playwright/.auth/standard-user.json'});
 
 test("should be able to click onto item and navigate to product details page", async ({page, poManager}) => {
     await poManager.dashboardPage.clickOnProductByIndex(0);

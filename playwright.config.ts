@@ -35,30 +35,27 @@ export default defineConfig({
       name: 'setup',
       testMatch: /.*\.setup\.ts$/,  // ✅ Matches .setup.ts files
     },
+    {
+      name: 'authenticated-tests',
+      testMatch: /tests\/authenticatedTests\/.*\.spec\.ts$/,  // ✅ Matches tests in authenticatedTests folder
+      use: {
+        ...devices['Desktop Chrome'],
+        ...devices['Desktop Firefox'],
+        storageState: 'playwright/.auth/standard-user.json' },
+        dependencies: ['setup'],
+    },
 
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"],
-        storageState: 'playwright/.auth/standard-user.json',
-       },
+      name: 'unauthenticated-tests',
+      testMatch: /tests\/unauthenticatedTests\/.*\.spec\.ts$/,  // ✅ Matches tests in unauthenticatedTests folder
+      use: {
+      ...devices['Desktop Chrome'],
+      ...devices['Desktop Firefox'],
+       storageState: undefined },
        dependencies: ['setup'],
-    },
+    }
 
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"],
-        storageState: 'playwright/.auth/standard-user.json',
-       },
-       dependencies: ['setup']
-    },
-
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"],
-        storageState: 'playwright/.auth/standard-user.json',
-       },
-       dependencies: ['setup']
-    },
+    
 
     /* Test against mobile viewports. */
     // {

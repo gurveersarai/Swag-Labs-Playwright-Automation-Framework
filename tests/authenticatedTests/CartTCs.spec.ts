@@ -1,7 +1,5 @@
-import {test} from '../fixtures/site';
+import {test} from '../../fixtures/site';
 import {expect} from "@playwright/test";
-
-test.use({storageState: 'playwright/.auth/standard-user.json'});
 
 test("user is able to continue shopping from the cart page", async ({prefilledCartPage, poManager}) => {
     
