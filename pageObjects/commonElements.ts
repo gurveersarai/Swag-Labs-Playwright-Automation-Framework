@@ -24,9 +24,16 @@ export class commonElements {
 
     async numberOfItemsInCart() {
         //this method returns the number of items in the cart
-        const itemCountText = await this.cartIconValue.textContent() ?? 0;
-        console.log(`Items in cart: ${itemCountText}`);
-        return itemCountText ? parseInt(itemCountText) : 0; 
+        if (await this.cartIconValue.isVisible() === true) {
+            const itemCountText = await this.cartIconValue.textContent() ?? 0;
+            console.log(`Items in cart: ${itemCountText}`);
+            return itemCountText ? parseInt(itemCountText) : 0; 
+        }
+        {
+            console.log("No items in cart.");
+            return 0;
+        }
+          
     }
 
     async logout() {

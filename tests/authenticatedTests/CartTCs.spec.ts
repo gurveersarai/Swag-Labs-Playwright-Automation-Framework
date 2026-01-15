@@ -1,25 +1,32 @@
 import {test} from '../../fixtures/site';
 import {expect} from "@playwright/test";
-
-test("user is able to continue shopping from the cart page", async ({prefilledCartPage, poManager}) => {
+import { addItemToCart } from '../../utils/cart.helper';
+test.beforeEach(async ({page}) => {
+    await page.goto("/inventory.html", { waitUntil: 'load' });
     
-    expect(prefilledCartPage).toHaveURL(/.*cart.html/);
+});
+
+test("user is able to continue shopping from the cart page", async ({page, poManager}) => {
+    await poManager.commonElements.cartIcon.click();
+    expect(page).toHaveURL(/.*cart.html/);
     await expect(poManager.cartPage.cartListHeader).toBeVisible();
 });
 
-test("user is able to see 'Your Cart' title on the cart page", async ({prefilledCartPage, poManager}) => {
+test("user is able to see 'Your Cart' title on the cart page", async ({ poManager}) => {
+    await poManager.commonElements.cartIcon.click();
     const pageTitle = await poManager.commonElements.pageTitle.textContent();
     expect(pageTitle).toBe("Your Cart");
 });
 
-test("user is able to select continue shopping CTA", async({prefilledCartPage, poManager}) => {
+test("user is able to select continue shopping CTA", async({page, poManager}) => {
     await poManager.commonElements.cartIcon.click();
     await poManager.cartPage.continueShopping();
-    await expect(prefilledCartPage).toHaveURL(/.*inventory.html/);
+    await expect(page).toHaveURL(/.*inventory.html/);
     await expect(poManager.commonElements.pageTitle).toHaveText("Products");
 });
 
-test("user is able to see items added to cart on the cart page", async ({prefilledCartPage, poManager}) => {
+test("user is able to see items added to cart on the cart page", async ({poManager}) => {
+    await addItemToCart(poManager);
     let count = 0;
     await poManager.cartPage.retrieveCartItems().then( async (items) => {
         for (const item of items) {
@@ -30,7 +37,8 @@ test("user is able to see items added to cart on the cart page", async ({prefill
     await expect(count).toBe(await poManager.commonElements.numberOfItemsInCart());
 });
 
-test("user is able to remove item from the cart page", async ({prefilledCartPage, poManager}) => {
+test("user is able to remove item from the cart page", async ({ poManager}) => {
+    await addItemToCart(poManager);
     await poManager.dashboardPage.addAllProducts();
     await poManager.commonElements.cartIcon.click();
     const initialItemCount = await poManager.commonElements.numberOfItemsInCart();
@@ -39,9 +47,10 @@ test("user is able to remove item from the cart page", async ({prefilledCartPage
     expect(updatedItemCount).toBe(initialItemCount - 1);
 });
 
-test("user is able to proceed to the checkout from from the cart page", async ({prefilledCartPage, poManager}) => {
+test("user is able to proceed to the checkout from from the cart page", async ({poManager, page}) => {
+    await addItemToCart(poManager);
     await poManager.cartPage.checkoutButton.click();
-    await expect(prefilledCartPage).toHaveURL(/.*checkout-step-one.html/);
+    await expect(page).toHaveURL(/.*checkout-step-one.html/);
     await expect(poManager.commonElements.pageTitle).toHaveText("Checkout: Your Information");
 });
 

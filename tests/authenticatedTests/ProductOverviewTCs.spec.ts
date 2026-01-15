@@ -1,6 +1,11 @@
 import {test} from "../../fixtures/site";
 import {expect} from "@playwright/test";
 
+test.beforeEach(async ({page}) => {
+    await page.goto("/inventory.html", { waitUntil: 'domcontentloaded' });
+    await page.waitForLoadState('networkidle');
+});
+
 test("should be able to see the product title on the overview page", async ({page, poManager}) => {
     const productTitle: string | null = await poManager.dashboardPage.getPageTitle();
     expect(productTitle).toBe("Products");
