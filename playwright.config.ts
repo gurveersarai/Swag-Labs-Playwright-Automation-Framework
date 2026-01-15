@@ -27,7 +27,7 @@ export default defineConfig({
     //storageState: './auth/auth.setup.json',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-    screenshot: "only-on-failure",
+    screenshot: "on",
   },
 
   /* Configure projects for major browsers */

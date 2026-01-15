@@ -23,7 +23,7 @@ test("should be able to retrieve the product details", async ({page, poManager})
     expect(productDetails.price).toBeDefined();
 })
 
-test.only("should be able to add and remove product to the cart on the product details page", async ({page, poManager}) => {
+test("should be able to add and remove product to the cart on the product details page", async ({page, poManager}) => {
     await poManager.dashboardPage.clickOnProductByIndex(0);
     await poManager.productDetailsPage.addProductToCart();
     const itemsInCartAfterAdd = await poManager.commonElements.numberOfItemsInCart();

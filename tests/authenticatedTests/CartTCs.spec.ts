@@ -39,8 +39,6 @@ test("user is able to see items added to cart on the cart page", async ({poManag
 
 test("user is able to remove item from the cart page", async ({ poManager}) => {
     await addItemToCart(poManager);
-    await poManager.dashboardPage.addAllProducts();
-    await poManager.commonElements.cartIcon.click();
     const initialItemCount = await poManager.commonElements.numberOfItemsInCart();
     await poManager.cartPage.removeItem(0);
     const updatedItemCount = await poManager.commonElements.numberOfItemsInCart();
