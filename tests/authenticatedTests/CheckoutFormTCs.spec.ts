@@ -6,6 +6,8 @@ const data = JSON.parse(JSON.stringify(personalDetails));
 
 test.beforeEach(async ({page}) => {
     await page.goto("/inventory.html", { waitUntil: 'load' });
+    const currentUrl = page.url();
+    expect(currentUrl).toContain("/inventory.html");
 
 });
 

@@ -15,7 +15,7 @@ export class commonElements {
         this.page = page;
         this.hambergerMenuButton = page.locator("#react-burger-menu-btn");
         this.logoutLink = page.locator("#logout_sidebar_link");
-        this.cartIcon = page.locator("#shopping_cart_container");
+        this.cartIcon = page.locator("#shopping_cart_container").first();
         this.closeMenuButton = page.locator("#react-burger-cross-btn");
         this.pageTitle = page.locator(".title");
         this.cancelButton = page.locator("#cancel");

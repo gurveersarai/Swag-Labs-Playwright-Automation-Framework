@@ -37,6 +37,8 @@ export default class DashboardPage {
         let count = 0;
         for (let i = 0; i < await this.productContainers.count(); i++) {
             const addToCartButton = await this.productContainers.nth(i).locator('.btn_inventory');
+            // Ensure the button is visible before clicking
+            await addToCartButton.waitFor({ state: 'visible' });
             
             if (await addToCartButton.isVisible()) {
                 await addToCartButton.click();

@@ -41,7 +41,7 @@ export default defineConfig({
       testMatch: /tests\/authenticatedTests\/.*\.spec\.ts$/,  // ✅ Matches tests in authenticatedTests folder
       use: {
         ...devices['Desktop Chrome'],
-        ...devices['Desktop Firefox'],
+       
         storageState: 'playwright/.auth/standard-user.json' },
         dependencies: ['setup'],
     },
@@ -51,12 +51,10 @@ export default defineConfig({
       testMatch: /tests\/unauthenticatedTests\/.*\.spec\.ts$/,  // ✅ Matches tests in unauthenticatedTests folder
       use: {
       ...devices['Desktop Chrome'],
-      ...devices['Desktop Firefox'],
+      
        storageState: undefined },
        dependencies: ['setup'],
-    }
-
-    
+    },
 
     /* Test against mobile viewports. */
     // {

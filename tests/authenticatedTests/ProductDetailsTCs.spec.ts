@@ -3,6 +3,8 @@ import {expect} from "@playwright/test";
 
 test.beforeEach(async ({page}) => {
     await page.goto("/inventory.html", { waitUntil: 'load' }); 
+    const currentUrl = page.url();
+    expect(currentUrl).toContain("/inventory.html");
 });
 
 test("should be able to click onto item and navigate to product details page", async ({page, poManager}) => {

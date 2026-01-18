@@ -5,6 +5,7 @@ import { commonElements } from "./commonElements";
 import { productDetailsPage } from "./productDetailsPage";
 import { cartPage } from "./cartPage";
 import { checkoutFormPage } from "./checkoutFormPage";
+import { checkoutConfirmationPage } from "./checkoutConfirmationPage";
 
 export default class POManager {
   loginPage: LoginPage;
@@ -14,6 +15,7 @@ export default class POManager {
   productDetailsPage: productDetailsPage
   cartPage: cartPage;
   checkoutFormPage: checkoutFormPage;
+  checkoutConfirmationPage: checkoutConfirmationPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -23,6 +25,7 @@ export default class POManager {
     this.productDetailsPage = new productDetailsPage(this.page);
     this.cartPage = new cartPage(this.page);
     this.checkoutFormPage = new checkoutFormPage(this.page);
+    this.checkoutConfirmationPage = new checkoutConfirmationPage(this.page);
   }
 
   getLoginPage() {
@@ -47,5 +50,9 @@ export default class POManager {
 
   getCheckoutFormPage() {
     return this.checkoutFormPage;
+  }
+
+  getCheckoutConfirmationPage() {
+    return this.checkoutConfirmationPage;
   }
 }

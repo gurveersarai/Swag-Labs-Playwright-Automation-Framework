@@ -1,25 +1,27 @@
 import {test} from '../../fixtures/site';
 import {expect} from "@playwright/test";
 import { addItemToCart } from '../../utils/cart.helper';
-test.beforeEach(async ({page}) => {
+test.beforeEach(async ({page, poManager}) => {
     await page.goto("/inventory.html", { waitUntil: 'load' });
+    const currentUrl = page.url();
+    expect(currentUrl).toContain("/inventory.html");
     
 });
 
 test("user is able to continue shopping from the cart page", async ({page, poManager}) => {
-    await poManager.commonElements.cartIcon.click();
+    await poManager.commonElements.cartIcon.click({force: true});
     expect(page).toHaveURL(/.*cart.html/);
     await expect(poManager.cartPage.cartListHeader).toBeVisible();
 });
 
 test("user is able to see 'Your Cart' title on the cart page", async ({ poManager}) => {
-    await poManager.commonElements.cartIcon.click();
+    await poManager.commonElements.cartIcon.click({force: true});
     const pageTitle = await poManager.commonElements.pageTitle.textContent();
     expect(pageTitle).toBe("Your Cart");
 });
 
 test("user is able to select continue shopping CTA", async({page, poManager}) => {
-    await poManager.commonElements.cartIcon.click();
+    await poManager.commonElements.cartIcon.click({force: true});
     await poManager.cartPage.continueShopping();
     await expect(page).toHaveURL(/.*inventory.html/);
     await expect(poManager.commonElements.pageTitle).toHaveText("Products");

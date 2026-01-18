@@ -4,6 +4,8 @@ import {expect} from "@playwright/test";
 test.beforeEach(async ({page}) => {
     await page.goto("/inventory.html", { waitUntil: 'domcontentloaded' });
     await page.waitForLoadState('networkidle');
+    const currentUrl = page.url();
+    expect(currentUrl).toContain("/inventory.html");
 });
 
 test("should be able to see the product title on the overview page", async ({page, poManager}) => {
