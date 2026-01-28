@@ -63,6 +63,8 @@ jobs:
             path: allure-report
 
       - name: Deploy Allure Report to GitHub Pages
-        run: npm run deploy:allure
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: peaceiris/actions-gh-pages@v3
+      with:
+          github_token: ${{ secrets.GH_PAGES_TOKEN }}
+          publish_dir: ./allure-report
+
