@@ -1,0 +1,7 @@
+Product Name:  Sauce Labs Backpack
+Product Name:  Sauce Labs Bike Light
+Product Name:  Sauce Labs Bolt T-Shirt
+Product Name:  Sauce Labs Fleece Jacket
+Product Name:  Sauce Labs Onesie
+Product Name:  Test.allTheThings() T-Shirt (Red)
+Fixture completed

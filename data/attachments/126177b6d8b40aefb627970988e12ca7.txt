@@ -1,0 +1,5 @@
+Product added to cart.
+Items in cart: 1
+Product removed from cart.
+No items in cart.
+Fixture completed

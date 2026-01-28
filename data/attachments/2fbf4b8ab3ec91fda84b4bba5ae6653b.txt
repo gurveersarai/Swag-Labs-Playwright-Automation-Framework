@@ -1,0 +1,7 @@
+Product at index 0 added to cart.
+Product at index 1 added to cart.
+Product at index 2 added to cart.
+Product at index 3 added to cart.
+Product at index 4 added to cart.
+Product at index 5 added to cart.
+Fixture completed
