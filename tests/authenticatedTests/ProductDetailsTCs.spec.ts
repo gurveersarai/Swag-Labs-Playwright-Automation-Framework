@@ -1,7 +1,10 @@
 import {test} from "../../fixtures/site";
 import {expect} from "@playwright/test";
 
-test.beforeEach(async ({page}) => {
+test.beforeEach(async ({page}, testInfo) => {
+    testInfo.annotations.push(
+        {type: "epic", description: "Individual Product Details"}
+    )
     await page.goto("/inventory.html", { waitUntil: 'load' }); 
     const currentUrl = page.url();
     expect(currentUrl).toContain("/inventory.html");

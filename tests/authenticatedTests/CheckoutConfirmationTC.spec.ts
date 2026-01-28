@@ -4,7 +4,10 @@ import { addItemToCart, completeCheckout } from "../../utils/cart.helper";
 import POManager from "../../pageObjects/POManager";
 
 
-test.beforeEach(async ({page, poManager}) => {
+test.beforeEach(async ({page, poManager}, testInfo) => {
+    testInfo.annotations.push (
+        {type: 'epic', description: 'Purchase Confirmation Page'}
+    )
     await page.goto("/inventory.html", { waitUntil: "load" });
     await completeCheckout(poManager);
 })

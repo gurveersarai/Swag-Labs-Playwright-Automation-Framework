@@ -2,7 +2,10 @@ import { test } from "../../fixtures/site";
 import { expect } from "@playwright/test";
 import testData from "../../utils/testData.json";
 
-test.beforeEach(async ({page}) => {
+test.beforeEach(async ({page}, testInfo) => {
+    testInfo.annotations.push(
+      {type: "epic", description: "Login Page"}
+    )
     await page.goto("/", { waitUntil: 'load' });
     
 });

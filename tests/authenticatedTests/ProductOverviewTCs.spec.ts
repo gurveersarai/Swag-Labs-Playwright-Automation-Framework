@@ -1,7 +1,10 @@
 import {test} from "../../fixtures/site";
 import {expect} from "@playwright/test";
 
-test.beforeEach(async ({page}) => {
+test.beforeEach(async ({page}, testInfo) => {
+    testInfo.annotations.push(
+        {type:"epic", description: "Homepage - Product Overview"}
+    )
     await page.goto("/inventory.html", { waitUntil: 'domcontentloaded' });
     await page.waitForLoadState('networkidle');
     const currentUrl = page.url();

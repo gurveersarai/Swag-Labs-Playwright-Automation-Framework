@@ -19,15 +19,22 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   //workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: "html",
+  reporter: [["html"], 
+  ["allure-playwright", {
+    outputFolder: 'allure-results',
+    detail: true,
+    suiteTitle: false,
+  }]
+],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: process.env.BASE_URL || "https://google.co.uk",
     headless: false,
     //storageState: './auth/auth.setup.json',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: "retain-on-failure",
     screenshot: "on",
+    video: 'retain-on-failure'
   },
 
   /* Configure projects for major browsers */

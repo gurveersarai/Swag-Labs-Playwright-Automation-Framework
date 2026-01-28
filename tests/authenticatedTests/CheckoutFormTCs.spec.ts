@@ -4,7 +4,10 @@ import personalDetails from "../../utils/personalDetails.json";
 import { firstCheckoutStep } from "../../utils/cart.helper";
 const data = JSON.parse(JSON.stringify(personalDetails));
 
-test.beforeEach(async ({page}) => {
+test.beforeEach(async ({page}, testInfo) => {
+    testInfo.annotations.push(
+        {type: "epic", description: "Checkout Form Data "}
+    )
     await page.goto("/inventory.html", { waitUntil: "load" });
     const currentUrl = page.url();
     expect(currentUrl).toContain("/inventory.html");
