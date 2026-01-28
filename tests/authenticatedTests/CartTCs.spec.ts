@@ -1,8 +1,8 @@
-import {test} from '../../fixtures/site';
+import {test} from "../../fixtures/site";
 import {expect} from "@playwright/test";
-import { addItemToCart } from '../../utils/cart.helper';
+import { addItemToCart } from "../../utils/cart.helper";
 test.beforeEach(async ({page, poManager}) => {
-    await page.goto("/inventory.html", { waitUntil: 'load' });
+    await page.goto("/inventory.html", { waitUntil: "load" });
     const currentUrl = page.url();
     expect(currentUrl).toContain("/inventory.html");
     

@@ -25,26 +25,26 @@ export class productDetailsPage {
 
    async addProductToCart() {
     await expect(this.addToCartButton).toBeVisible();
-    if (await this.addToCartButton.textContent() === 'Add to cart') {
+    if (await this.addToCartButton.textContent() === "Add to cart") {
     await this.addToCartButton.click();
     //needs some sort of wait here to ensure the button text changes before assertion
-    await this.removeFromCartButton.waitFor({ state: 'attached' });
-    await expect(this.removeFromCartButton).toHaveText('Remove');
-    console.log('Product added to cart.');
+    await this.removeFromCartButton.waitFor({ state: "attached" });
+    await expect(this.removeFromCartButton).toHaveText("Remove");
+    console.log("Product added to cart.");
     }
     else {
-    console.log('Product already in cart.');
+    console.log("Product already in cart.");
     }
     }
 
     async removeProductFromCart() {
     await expect(this.removeFromCartButton).toBeVisible();
 
-    if (await this.removeFromCartButton.textContent() === 'Remove') {
+    if (await this.removeFromCartButton.textContent() === "Remove") {
     await this.removeFromCartButton.click();
-    await this.addToCartButton.waitFor({ state: 'attached' });
-    await expect(this.addToCartButton).toHaveText('Add to cart');
-    console.log('Product removed from cart.');
+    await this.addToCartButton.waitFor({ state: "attached" });
+    await expect(this.addToCartButton).toHaveText("Add to cart");
+    console.log("Product removed from cart.");
     }
     }
 

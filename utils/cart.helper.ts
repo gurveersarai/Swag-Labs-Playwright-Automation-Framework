@@ -19,5 +19,5 @@ export async function completeCheckout(poManager: POManager) {
   await poManager.cartPage.checkoutButton.isVisible();
   await poManager.cartPage.checkoutButton.click();
   await poManager.checkoutFormPage.fillCheckoutForm(data[0].firstName, data[0].lastName, data[0].postalCode);
-  await poManager.checkoutFormPage.continueButton.click();
+  
 }

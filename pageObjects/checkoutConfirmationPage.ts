@@ -6,13 +6,15 @@ export class checkoutConfirmationPage {
     totalAmount: Locator
     finishButton: Locator
     cancelButton: Locator
+    backtoProductsButton: Locator
 
     constructor(page: Page) {
         this.page = page;
-        this.paymentInformation = page.locator(".summary_info:nth-of-type(1)");
+        this.paymentInformation = page.locator("[data-test='payment-info-value']");
         this.totalAmount = page.locator(".summary_total_label");
         this.finishButton = page.locator("#finish");
         this.cancelButton = page.locator("#cancel");
+        this.backtoProductsButton = page.locator("#back-to-products")
     }
 
     async totalAmountNumber() {

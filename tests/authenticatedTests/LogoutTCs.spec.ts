@@ -2,8 +2,8 @@ import { test } from "../../fixtures/site";
 import { expect } from "@playwright/test";
 
 test.beforeEach(async ({page}) => {
-    await page.goto("/inventory.html", { waitUntil: 'domcontentloaded' });
-    await page.waitForLoadState('networkidle');
+    await page.goto("/inventory.html", { waitUntil: "domcontentloaded" });
+    await page.waitForLoadState("networkidle");
 });
 
 test("should be able to see the logout link in the menu", async ({poManager }) => {

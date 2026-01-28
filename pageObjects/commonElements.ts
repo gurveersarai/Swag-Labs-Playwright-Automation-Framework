@@ -47,4 +47,8 @@ export class commonElements {
     await poManager.commonElements.cartIcon.click();
     return this.page;
     }
+
+    async scrollToTop({poManager}: {poManager: POManager}) {
+        await poManager.page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    }
 }
