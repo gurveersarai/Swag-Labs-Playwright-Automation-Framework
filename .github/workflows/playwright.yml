@@ -61,3 +61,8 @@ jobs:
         with: 
             name: allure-report
             path: allure-report
+
+      - name: Deploy Allure Report to GitHub Pages
+        run: npm run deploy:allure
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
