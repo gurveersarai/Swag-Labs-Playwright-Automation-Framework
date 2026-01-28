@@ -1,1 +1,1 @@
-{"id":"ee2189d20ba780b1a64d094f3ceb4bc1","fullName":"unauthenticatedTests/LoginTCs.spec.ts:38:5","name":"user is not able to login with empty credentials","status":"passed","testResultsByEnv":{"default":"8f51fe0485d00a7f407a4a2050871851"}}
+{"id":"ee2189d20ba780b1a64d094f3ceb4bc1","fullName":"unauthenticatedTests/LoginTCs.spec.ts:38:5","name":"user is not able to login with empty credentials","status":"passed","testResultsByEnv":{"default":"e0c9eb601da56f2d4aab5bef80c1ca09"}}
