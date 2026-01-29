@@ -1,1 +1,1 @@
-{"id":"df2b58929bb71719c1d829c796f33b7d","fullName":"authenticatedTests/ProductDetailsTCs.spec.ts:41:5","name":"should be able to navigate back to products from the product details page","status":"passed","testResultsByEnv":{"default":"88d7b2aeb4d99621c26bec524047681c"}}
+{"id":"df2b58929bb71719c1d829c796f33b7d","fullName":"authenticatedTests/ProductDetailsTCs.spec.ts:41:5","name":"should be able to navigate back to products from the product details page","status":"passed","testResultsByEnv":{"default":"6981c313ebf8ee509968a74c9d8b2d20"}}
