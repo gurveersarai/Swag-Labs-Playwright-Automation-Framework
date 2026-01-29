@@ -27,13 +27,83 @@ object modal and storage stage framework designs.
 ```text
 Swag-Labs-Playwright-Automation-Framework/
 ├── fixtures/
-├── pageObjects/
+├── pageObjects/              # Page Object Classes
 │    └── loginPage
-│    └── POManager                # Contains helper code              
+│    └── POManager                             
 ├── scripts/     
 ├── tests/
-│    └── authenticatedTests/
+│    └── authenticatedTests/  #Test Seperated into Folders
 │    └── unauthenticatedTests/
 │     └── auth.setup.ts
-├── utils/
-│
+├── utils/                    # Contains helper code and data objects
+├── .env                      # Environment configuration
+├── .gitignore
+├── package.json              # Project dependencies & scripts
+├── playwright.config.*       # Playwright configuration
+└── README.md
+```
+## ⚙️ Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
+- Git
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/gurveersarai/Hudl-Login-Page-Playwright-Automation-Framework.git
+cd Hudl-Login-Page-Playwright-Automation-Framework
+```
+2. Install Dependencies
+```bash
+npm install
+```
+3. Install Playwright
+```bash
+npm playwright install
+```
+## ▶️ Running Tests
+Run all tests (headless mode set by default)
+
+```bash
+npm run test
+```
+
+Run all tests and open generated Allure Report containing test results
+```
+npm run ci
+```
+
+Reports include:
+- Screenshots
+- Videos
+- Traces
+- Detailed failure logs
+
+## 🧱 Page Object Model (POM)
+
+This framework follows the Page Object Model pattern to:
+- Improve maintainability
+- Reduce code duplication
+- Make tests easier to read and scale
+
+## 🔐 Test Coverage
+ - Login data validation
+ - Product Homepage - Item Count, UI components and Add to Cart
+ - Product Overview Page - UI components, Adding and Removing from the Cart
+ - Cart Page - UI Components, Counting Items, Removing and Adding Items, Continue and Checkout CTAs
+ - Checkout Form - data validation and UI Components
+ - Checkout Confirmation Form - Purchasing items, confirming detials and navigating back to the homepage
+
+## 🧪 Best Practices Used
+- Explicit waits via Playwright auto-waiting
+- Centralized selectors via POM
+- Clean test isolation
+- Storage State to hold login session token
+- Fail-fast debugging with traces & screenshots
+- Helper functions to avoid code duplication
+- Data driven testing for login credentials
+
+## 🤝 Contributing
+
+Contributions are welcome!
+Feel free to open a PR or raise an issue for improvements.
