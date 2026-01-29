@@ -1,1 +1,1 @@
-{"id":"5724ce03d6864d013411fc43bb5a79f4","fullName":"authenticatedTests/CheckoutConfirmationTC.spec.ts:40:5","name":"should be able to go back to the inventory page by clicking the 'Back Home' button","status":"passed","testResultsByEnv":{"default":"db79b17cf0be6e51314df598cd72ba3a"}}
+{"id":"5724ce03d6864d013411fc43bb5a79f4","fullName":"authenticatedTests/CheckoutConfirmationTC.spec.ts:40:5","name":"should be able to go back to the inventory page by clicking the 'Back Home' button","status":"passed","testResultsByEnv":{"default":"ab77815f97c5feef2104457e0bb8c228"}}

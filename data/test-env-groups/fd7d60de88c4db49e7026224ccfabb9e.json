@@ -1,1 +1,1 @@
-{"id":"fd7d60de88c4db49e7026224ccfabb9e","fullName":"authenticatedTests/CheckoutFormTCs.spec.ts:28:5","name":"should be redirected to the cart page when clicking cancel button on checkout form page","status":"passed","testResultsByEnv":{"default":"9501f7ad9b6d6cdbbb8a13ce114b83c9"}}
+{"id":"fd7d60de88c4db49e7026224ccfabb9e","fullName":"authenticatedTests/CheckoutFormTCs.spec.ts:28:5","name":"should be redirected to the cart page when clicking cancel button on checkout form page","status":"passed","testResultsByEnv":{"default":"5429fba86ea172e9ce382a994e33274e"}}

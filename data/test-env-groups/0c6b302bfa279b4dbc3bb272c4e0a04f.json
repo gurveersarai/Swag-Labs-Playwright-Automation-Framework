@@ -1,1 +1,1 @@
-{"id":"0c6b302bfa279b4dbc3bb272c4e0a04f","fullName":"authenticatedTests/LogoutTCs.spec.ts:12:5","name":"should be able to see the logout link in the menu","status":"passed","testResultsByEnv":{"default":"84cc8081367a56e4ab44397df9460557"}}
+{"id":"0c6b302bfa279b4dbc3bb272c4e0a04f","fullName":"authenticatedTests/LogoutTCs.spec.ts:12:5","name":"should be able to see the logout link in the menu","status":"passed","testResultsByEnv":{"default":"547c56a16703b7d45c540339615926be"}}
