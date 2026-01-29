@@ -1,4 +1,4 @@
-# 🚀 Swag Labs Playwright Automation Framework (WIP)
+# 🚀 Swag Labs Playwright Automation Framework
 
 A playwright test automation framework for end to end testing of the Swag Labs Website, integrated with a GitHub actions CI/CD pipeline producing an Allure Report including photo evidence.
 This framework was designed with maintainability in mind, using the best practices to ensure that updates can easily be made when required such as environment files, data driven testing, page
