@@ -1,1 +1,1 @@
-{"id":"6f43093f10a1273d6540085b9e4f279b","fullName":"authenticatedTests/CheckoutConfirmationTC.spec.ts:32:5","name":"should be able to finish the checkout process by clicking the finish button","status":"passed","testResultsByEnv":{"default":"a4772ebb344bc85d49f5ec0aa2e811e5"}}
+{"id":"6f43093f10a1273d6540085b9e4f279b","fullName":"authenticatedTests/CheckoutConfirmationTC.spec.ts:32:5","name":"should be able to finish the checkout process by clicking the finish button","status":"passed","testResultsByEnv":{"default":"f1c973d2138cbb5cca8356f874af926e"}}

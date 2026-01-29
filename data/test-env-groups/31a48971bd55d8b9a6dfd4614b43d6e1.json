@@ -1,1 +1,1 @@
-{"id":"31a48971bd55d8b9a6dfd4614b43d6e1","fullName":"authenticatedTests/CheckoutConfirmationTC.spec.ts:26:5","name":"should be able to see the total amount on the checkout confirmation page","status":"passed","testResultsByEnv":{"default":"9c3a3f055fa403e8e55712fe9656cee5"}}
+{"id":"31a48971bd55d8b9a6dfd4614b43d6e1","fullName":"authenticatedTests/CheckoutConfirmationTC.spec.ts:26:5","name":"should be able to see the total amount on the checkout confirmation page","status":"passed","testResultsByEnv":{"default":"a04c960d9ef0b491dee639793a26610e"}}
