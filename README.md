@@ -49,8 +49,8 @@ Swag-Labs-Playwright-Automation-Framework/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/gurveersarai/Hudl-Login-Page-Playwright-Automation-Framework.git
-cd Hudl-Login-Page-Playwright-Automation-Framework
+git clone https://github.com/gurveersarai/Swag-Labs-Playwright-Automation-Framework.git
+cd Swag-Labs-Playwright-Automation-Framework
 ```
 2. Install Dependencies
 ```bash
