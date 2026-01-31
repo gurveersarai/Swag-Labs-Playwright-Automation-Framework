@@ -1,1 +1,1 @@
-{"id":"32972dee54f1a2709fd3ee86adcbb5e5","fullName":"authenticatedTests/ProductDetailsTCs.spec.ts:31:5","name":"should be able to add and remove product to the cart on the product details page","status":"passed","testResultsByEnv":{"default":"0e92fe31c7896ad242227fb26f8472c6"}}
+{"id":"32972dee54f1a2709fd3ee86adcbb5e5","fullName":"authenticatedTests/ProductDetailsTCs.spec.ts:31:5","name":"should be able to add and remove product to the cart on the product details page","status":"passed","testResultsByEnv":{"default":"df25743d6c4a7ec1fc2672858f78d19f"}}
